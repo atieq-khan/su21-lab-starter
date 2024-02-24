@@ -7,7 +7,7 @@ int main() {
 
     const char *test1_first = "Abraham";
     const char *test1_last = "Garcia";
-    const char *test1_pwd = "qrtv?,mp!ltrA0b13rab4ham";
+    const char *test1_pwd = "Aqrtv?,mp!ltrA0b13rab4ham";
     bool test1 = check_password(test1_first, test1_last, test1_pwd);
     assert(test1);
 
