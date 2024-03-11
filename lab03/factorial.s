@@ -7,6 +7,7 @@ n: .word 8
 main:
     la t0, n
     lw a0, 0(t0)
+
     jal ra, factorial
 
     addi a1, a0, 0
@@ -21,4 +22,12 @@ main:
     ecall # Exit
 
 factorial:
-    # YOUR CODE HERE
+    addi a2 a0 0    # for copying the vlaue of a0(aka n)
+    addi a3 a3 1    # Making a stop condition
+    
+loop:
+    addi a0 a0 -1   # making n-1 
+    mul a2 a2 a0    # multiply the n * (n-1)
+    bne a0 a3 loop  # loop until it is not equal to 1
+    addi a0 a2 0    # save the value of a2 to a0 for returning
+    jr ra           # jump back to main.
